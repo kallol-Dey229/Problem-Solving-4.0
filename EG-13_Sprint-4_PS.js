@@ -276,3 +276,48 @@ var searchRange = function(nums, target) {
 
 
 // console.log(searchRange([5, 7, 7, 8, 8, 10], target = 8))
+
+
+
+
+
+
+
+/**
+ * @param {string} s1
+ * @param {string} s2
+ * @return {boolean}
+ */
+var checkInclusion = function(s1, s2) {
+
+    let target = s1.split("").sort().join("");
+
+    for (let i = 0; i <= s2.length - s1.length; i++) {
+
+        let part = s2
+            .substring(i, i + s1.length)
+            .split("")
+            .sort()
+            .join("");
+
+        if (part === target) {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+
+
+// console.log(checkInclusion("ab", "eidbaooo"))
+
+
+
+
+
+
+
+
+
+

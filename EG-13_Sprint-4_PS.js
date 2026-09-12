@@ -204,3 +204,42 @@ var productExceptSelf = function(nums) {
 
 
 // console.log(productExceptSelf([1, 2, 3, 4]))
+
+
+
+
+
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+
+    let count = 0;
+    let current = head;
+
+    while (current !== null) {
+        count++;
+        current = current.next;
+    }
+
+    if (n === count) {
+        return head.next;
+    }
+
+    current = head;
+
+    for (let i = 1; i < count - n; i++) {
+        current = current.next;
+    }
+
+   
+    current.next = current.next.next;
+
+    return head;
+};
+
+
+
+// console.log(removeNthFromEnd([1, 2, 3, 4, 5], n = 2))

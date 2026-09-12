@@ -37,7 +37,7 @@ var isIsomorphic = function (s, t) {
  * @param {string} s
  * @return {boolean}
  */
-var wordPattern = function(pattern, s) {
+var wordPattern = function (pattern, s) {
 
     let words = s.split(" ");
 
@@ -58,7 +58,7 @@ var wordPattern = function(pattern, s) {
             return false;
         }
 
-        
+
         if (map2[word] && map2[word] !== letter) {
             return false;
         }
@@ -71,4 +71,39 @@ var wordPattern = function(pattern, s) {
 };
 
 
-console.log(wordPattern("abba", "dog cat cat dog"))
+// console.log(wordPattern("abba", "dog cat cat dog"))
+
+
+
+
+
+
+
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {character}
+ */
+var findTheDifference = function (s, t) {
+
+    let used = [];
+
+    for (let i = 0; i < s.length; i++) {
+
+        for (let j = 0; j < t.length; j++) {
+
+            if (s[i] === t[j] && !used[j]) {
+                used[j] = true;
+                break;
+            }
+        }
+    }
+
+    for (let j = 0; j < t.length; j++) {
+        if (!used[j]) {
+            return t[j];
+        }
+    }
+};
+
+// console.log(findTheDifference("abcd", "abcde"))

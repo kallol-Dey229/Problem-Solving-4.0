@@ -107,3 +107,36 @@ var findTheDifference = function (s, t) {
 };
 
 // console.log(findTheDifference("abcd", "abcde"))
+
+
+
+
+
+
+
+
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var reverseList = function(head) {
+
+    let previous = null;
+
+    while (head !== null) {
+
+        let next = head.next;
+
+        head.next = previous;
+
+        previous = head;
+
+        head = next;
+    }
+
+    return previous;
+};
+
+
+
+// console.log(reverseList([1, 2, 3, 4, 5]))

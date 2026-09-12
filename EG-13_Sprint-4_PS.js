@@ -140,3 +140,34 @@ var reverseList = function(head) {
 
 
 // console.log(reverseList([1, 2, 3, 4, 5]))
+
+
+
+
+
+
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var middleNode = function(head) {
+
+    let count = 0;
+    let current = head;
+
+    while (current !== null) {
+        count++;
+        current = current.next;
+    }
+
+    current = head;
+
+    for (let i = 0; i < Math.floor(count / 2); i++) {
+        current = current.next;
+    }
+
+    return current;
+};
+
+
+console.log(middleNode([1, 2, 3, 4, 5]))

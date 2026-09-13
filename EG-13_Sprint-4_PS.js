@@ -119,7 +119,7 @@ var findTheDifference = function (s, t) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function(head) {
+var reverseList = function (head) {
 
     let previous = null;
 
@@ -150,7 +150,7 @@ var reverseList = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
+var middleNode = function (head) {
 
     let count = 0;
     let current = head;
@@ -180,7 +180,7 @@ var middleNode = function(head) {
  * @param {number[]} nums
  * @return {number[]}
  */
-var productExceptSelf = function(nums) {
+var productExceptSelf = function (nums) {
 
     let result = [];
 
@@ -214,7 +214,7 @@ var productExceptSelf = function(nums) {
  * @param {number} n
  * @return {ListNode}
  */
-var removeNthFromEnd = function(head, n) {
+var removeNthFromEnd = function (head, n) {
 
     let count = 0;
     let current = head;
@@ -234,7 +234,7 @@ var removeNthFromEnd = function(head, n) {
         current = current.next;
     }
 
-   
+
     current.next = current.next.next;
 
     return head;
@@ -253,7 +253,7 @@ var removeNthFromEnd = function(head, n) {
  * @param {number} target
  * @return {number[]}
  */
-var searchRange = function(nums, target) {
+var searchRange = function (nums, target) {
 
     let start = -1;
     let end = -1;
@@ -288,7 +288,7 @@ var searchRange = function(nums, target) {
  * @param {string} s2
  * @return {boolean}
  */
-var checkInclusion = function(s1, s2) {
+var checkInclusion = function (s1, s2) {
 
     let target = s1.split("").sort().join("");
 
@@ -321,3 +321,30 @@ var checkInclusion = function(s1, s2) {
 
 
 
+/**
+ * @param {string} s
+ * @param {string} p
+ * @return {number[]}
+ */
+
+var findAnagrams = function(s, p) {
+    let result = [];
+
+    for (let i = 0; i <= s.length - p.length; i++) {
+
+        let part = s.slice(i, i + p.length);
+
+        let a = part.split("").sort().join("");
+        let b = p.split("").sort().join("");
+
+        if (a === b) {
+            result.push(i);
+        }
+    }
+
+    return result;
+};
+
+
+
+// console.log(findAnagrams("cbaebabacd", "abc"));
